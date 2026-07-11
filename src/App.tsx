@@ -6,6 +6,7 @@ import Home from './layouts/Home'
 import ProductList from './products/ProductList'
 import ProductInfo from './products/ProductInfo'
 import AddProduct from './products/AddProduct'
+import SignIn from './users/SignIn'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
             <Route path='/products' element={<ProductList />} />
             <Route path='/products/:id' element={<ProductInfo />} />
             <Route path='/products/add' element={<AddProduct />} />
+            <Route path='/signin' element={<SignIn />} />
           </Routes>
         </BrowserRouter>
       </section>

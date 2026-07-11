@@ -167,3 +167,107 @@
 .add-product button:hover{
   background-color: #c2185b;
 } 
+/* 로그인 스타일 */
+.signin{
+  width: 80%;
+  max-width: 600px;
+  margin: 40px auto;
+}
+.signin h2{
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+.signin form{
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.signin form > div{
+  display: flex;
+  align-items: flex-start;
+}
+.signin label{
+  width: 70px;
+  flex-shrink: 0; /* 라벨의 너비 고정 */
+  padding-top: 8px;
+  font-size: 16px;
+  color: #444;
+}
+.signin input[type="text"],
+.signin input[type="password"]{
+  margin: 4px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.signin button{
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #30ca11;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.signin button:hover{
+  background-color: #1e9813;
+} 
+.signin .error{
+  color: #e91263;
+  margin-top: 10px;
+}
+.signup-link{
+  margin-top: 15px;
+}
+
+/* 회원가입 스타일 */
+.signup{
+  width: 80%;
+  max-width: 600px;
+  margin: 40px auto;
+}
+.signup h2{
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+.signup form{
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.signup form > div{
+  display: flex;
+  align-items: flex-start;
+}
+.signup label{
+  width: 110px;
+  flex-shrink: 0; /* 라벨의 너비 고정 */
+  padding-top: 8px;
+  font-size: 16px;
+  color: #444;
+}
+.signup input[type="text"],
+.signup input[type="password"]{
+  margin: 4px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.signup button{
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3915ef;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.signup button:hover{
+  background-color: #0204a0;
+} 
