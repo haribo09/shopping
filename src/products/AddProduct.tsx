@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // 상품 추가 폼 데이터 인터페이스 정의
-interface FormData{
+interface FormData {
     name: string,
     price: number,
     description: string,
@@ -20,15 +20,15 @@ const AddProduct = () => {
     const navigate = useNavigate();
 
     // 필드 입력값 변경
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | 
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement |
         HTMLTextAreaElement>) => {
         const { name, value } = e.target; //파일이 없는 경우
         const files = (e.target as HTMLInputElement).files;  //파일이 있는 경우
 
-        if(name === "image" && files){ //파일이 있는 경우
-            setFormData({...formData, image: files[0]});
-        }else{ //파일이 없는 경우
-            setFormData({...formData, [name]: value}); 
+        if (name === "image" && files) { //파일이 있는 경우
+            setFormData({ ...formData, image: files[0] });
+        } else { //파일이 없는 경우
+            setFormData({ ...formData, [name]: value });
         }
     }
 
@@ -36,10 +36,10 @@ const AddProduct = () => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         //폼 데이터 구조분해 할당
-        const { name, price, description, image} = formData;
+        const { name, price, description } = formData;
 
         //유효성 검사
-        if(!name || !price || !description){
+        if (!name || !price || !description) {
             alert("모든 항목을 입력해주세요");
             return;
         }
@@ -49,14 +49,14 @@ const AddProduct = () => {
         navigate('/products'); //상품 등록후 상품목록 페이지로 이동
     }
 
-    return(
+    return (
         <div className="add-product">
             <h2>상품 등록</h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">상품명</label>
-                    <input 
-                        type="text" 
+                    <input
+                        type="text"
                         id="name"
                         name="name"
                         placeholder="상품명을 입력하세요"
@@ -66,8 +66,8 @@ const AddProduct = () => {
                 </div>
                 <div>
                     <label htmlFor="price">가격</label>
-                    <input 
-                        type="number" 
+                    <input
+                        type="number"
                         id="price"
                         name="price"
                         placeholder="가격을 입력하세요"
@@ -77,7 +77,7 @@ const AddProduct = () => {
                 </div>
                 <div>
                     <label htmlFor="description">설명</label>
-                    <textarea 
+                    <textarea
                         id="description"
                         name="description"
                         placeholder="설명을 입력하세요"
@@ -87,8 +87,8 @@ const AddProduct = () => {
                 </div>
                 <div>
                     <label htmlFor="image">이미지</label>
-                    <input 
-                        type="file" 
+                    <input
+                        type="file"
                         id="image"
                         name="image"
                         onChange={handleChange}
