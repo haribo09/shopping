@@ -400,7 +400,7 @@
   .add-product,
   .signin,
   .signup {
-    width: 90%;
+    width: 100%;
   }
   .product-list .card-container {
     justify-content: center;
