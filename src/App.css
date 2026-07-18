@@ -401,6 +401,7 @@
   .signin,
   .signup {
     width: 100%;
+    text-align: center;
   }
   .product-list .card-container {
     justify-content: center;
