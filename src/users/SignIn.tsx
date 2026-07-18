@@ -1,13 +1,19 @@
 import { useState } from "react";
 import users from "../data/users.json"
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
+// 폼 데이터 객체
 interface SignInForm{
     username: string,
     password: string,
 }
 
-const SignIn = () => {
+// 로그인 props 객체 정의
+interface SignInProps{
+    onLogin: (username: string) => void;
+}
+
+const SignIn = ({onLogin}: SignInProps) => {
     // 폼 데이터 상태 관리
     const [formData, setFormData] = useState<SignInForm>({
         username: '',
@@ -44,6 +50,7 @@ const SignIn = () => {
 
         if(matched){
             setLoginResult("success");
+            onLogin(username); //부모 컴포넌트에 알림
             alert("로그인 되었습니다.");
             navigate('/');  //로그인 성공후 메인 페이지로 이동
         }else{
@@ -79,9 +86,12 @@ const SignIn = () => {
                     />
                 </div>
                 <button type="submit">로그인</button>
-                {loginResult === "fail" && 
-                    <p className="error">로그인 실패! 다시 시도해 주세요</p>}
             </form>
+            <p className="signup-link">
+                아직 계정이 없으신가요? <Link to="/signup">회원가입</Link>
+            </p>
+            {loginResult === "fail" && 
+                <p className="error">로그인 실패! 다시 시도해 주세요</p>}
         </div>
     )
 }
